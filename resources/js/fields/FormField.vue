@@ -61,6 +61,9 @@ export default defineComponent({
       : this.value
 
     this.flexibleGroup = this.resolveFlexible(this)
+
+    console.log('fullWidthContent: ',this.fullWidthContent);
+    
   },
 
   computed: {
