@@ -40,10 +40,6 @@ export default defineComponent({
       type: Object as PropType<NovaField>,
       required: true,
     },
-    fullWidthContent: {
-      type: Boolean,
-      default: false
-    }
   },
 
   data: () => ({
@@ -62,7 +58,7 @@ export default defineComponent({
 
     this.flexibleGroup = this.resolveFlexible(this)
 
-    console.log('fullWidthContent: ',this.fullWidthContent);
+    console.log('fullWidthContent: ',this.currentField);
     
   },
 
