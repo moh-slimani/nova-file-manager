@@ -155,7 +155,12 @@ export default defineComponent({
           <div v-if="value?.length > 0" class="flex flex-row gap-2 flex-wrap w-full">
             <draggable
               v-model="value"
-              class="columns-2 md:columns-3 gap-4 mb-2 w-full"
+              :class="{
+                'columns-2 md:columns-3': value.length > 4,
+                'columns-2': value.length > 1 && value.length <= 4,
+                'columns-1': value.length === 4,
+              }"
+              class="gap-4 mb-2 w-full"
               ghost-class="opacity-0"
               item-key="id"
               @end="drag = false"
