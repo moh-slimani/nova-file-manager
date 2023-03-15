@@ -40,7 +40,7 @@ onMounted(() => store.syncDarkMode())
           <ul :class="{
                 'columns-2 md:columns-3': field.value.length > 4,
                 'columns-2': field.value.length > 1 && field.value.length <= 4,
-                'columns-1': field.value.length === 4,
+                'columns-1': field.value.length === 1,
               }"
               class="gap-4 mb-2 w-full" 
           role="group">

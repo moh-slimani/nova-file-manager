@@ -158,7 +158,7 @@ export default defineComponent({
               :class="{
                 'columns-2 md:columns-3': value.length > 4,
                 'columns-2': value.length > 1 && value.length <= 4,
-                'columns-1': value.length === 4,
+                'columns-1': value.length === 1,
               }"
               class="gap-4 mb-2 w-full"
               ghost-class="opacity-0"
