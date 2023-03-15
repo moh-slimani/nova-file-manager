@@ -57,9 +57,6 @@ export default defineComponent({
       : this.value
 
     this.flexibleGroup = this.resolveFlexible(this)
-
-    console.log('fullWidthContent: ', this.currentField.fullWidth);
-    
   },
 
   computed: {
@@ -156,11 +153,14 @@ export default defineComponent({
       <div class="nova-file-manager">
         <div :class="{ dark }">
           <div v-if="value?.length > 0" class="flex flex-row gap-2 flex-wrap w-full">
-            <draggable v-model="value" :class="{
-              'columns-2 md:columns-3': value.length > 4,
-              'columns-2': value.length > 1 && value.length <= 4,
-              'columns-1': value.length === 1,
-            }" class="gap-4 mb-2 w-full" ghost-class="opacity-0" item-key="id" @end="drag = false"
+            <draggable v-model="value" 
+              :class="{
+                'columns-2 md:columns-3': value.length > 4,
+                'columns-2': value.length > 1 && value.length <= 4,
+                'columns-1': value.length === 1,
+              }" 
+              class="gap-4 mb-2 w-full" 
+              ghost-class="opacity-0" item-key="id" @end="drag = false"
               @start="drag = true" tag="ul" v-bind="dragOptions">
               <template #item="{ element }">
                 <FieldCard :field="field" :file="element" class="cursor-grab" :on-deselect="deselectFile" />
