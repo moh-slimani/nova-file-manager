@@ -37,7 +37,13 @@ onMounted(() => store.syncDarkMode())
     <template v-if="field.value" v-slot:value>
       <div class="nova-file-manager">
         <div :class="{ dark }">
-          <ul class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-2 w-full" role="group">
+          <ul :class="{
+                'columns-2 md:columns-3': field.value.length > 4,
+                'columns-2': field.value.length > 1 && field.value.length <= 4,
+                'columns-1': field.value.length === 4,
+              }"
+              class="gap-4 mb-2 w-full" 
+          role="group">
             <template v-for="file in field.value" :key="file.id">
               <FieldCard :field="field" :file="file" :attribute="field.attribute" :detail="true" :on-copy="copy" />
 
