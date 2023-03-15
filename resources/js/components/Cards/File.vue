@@ -38,7 +38,7 @@ const name = computed(() => (missing.value ? props.file.path : props.file.name))
   <button class="relative cursor-pointer group focus-visible:outline-none flex flex-col items-start" :title="name">
     <div
       :class="[
-        'relative block aspect-square w-full h-full overflow-hidden rounded-lg hover:shadow-md hover:opacity-75 border border-gray-200/50 dark:border-gray-700/50 text-left',
+        'relative block w-full h-full overflow-hidden rounded-lg hover:shadow-md hover:opacity-75 border border-gray-200/50 dark:border-gray-700/50 text-left',
         'group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-black dark:group-focus-visible:outline-white',
         selected ? 'outline outline-2 outline-blue-500 group-focus-visible:outline-blue-500' : '',
       ]"

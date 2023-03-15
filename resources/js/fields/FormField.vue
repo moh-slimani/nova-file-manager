@@ -164,7 +164,7 @@ export default defineComponent({
               v-bind="dragOptions"
             >
               <template #item="{ element }">
-                <FieldCard :field="field" :file="element" class="cursor-grab" :on-deselect="deselectFile" />
+                <FieldCard :field="field" :fullWidthContent="fullWidthContent" :file="element" class="cursor-grab" :on-deselect="deselectFile" />
               </template>
             </draggable>
           </div>
