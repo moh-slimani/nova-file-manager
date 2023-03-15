@@ -40,6 +40,7 @@ export default defineComponent({
       type: Object as PropType<NovaField>,
       required: true,
     },
+    fullWidthContent: { type: Boolean, default: false }
   },
 
   data: () => ({
@@ -147,14 +148,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <DefaultField :errors="errors" :field="currentField" :show-help-text="showHelpText">
+  <DefaultField :errors="errors" :fullWidthContent="fullWidthContent" :field="currentField" :show-help-text="showHelpText">
     <template #field>
       <div class="nova-file-manager">
         <div :class="{ dark }">
           <div v-if="value?.length > 0" class="flex flex-row gap-2 flex-wrap w-full">
             <draggable
               v-model="value"
-              class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-2 w-full"
+              class="columns-2 md:columns-3 gap-4 mb-2 w-full"
               ghost-class="opacity-0"
               item-key="id"
               @end="drag = false"
