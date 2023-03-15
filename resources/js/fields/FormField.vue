@@ -58,7 +58,7 @@ export default defineComponent({
 
     this.flexibleGroup = this.resolveFlexible(this)
 
-    console.log('fullWidthContent: ',this.currentField);
+    console.log('fullWidthContent: ', this.currentField.fullWidth);
     
   },
 
@@ -71,7 +71,7 @@ export default defineComponent({
         disabled: !this.currentField?.multiple,
         ghostClass: 'opacity-0',
       }
-    },
+    }
   },
 
   methods: {
@@ -150,7 +150,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <DefaultField :errors="errors" :field="currentField"
+  <DefaultField :errors="errors" :fullWidthContent="currentField.fullWidth" :field="currentField"
     :show-help-text="showHelpText">
     <template #field>
       <div class="nova-file-manager">
