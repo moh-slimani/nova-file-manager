@@ -150,7 +150,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <DefaultField :errors="errors" :full-width-content="fullWidthContent" :field="currentField"
+  <DefaultField :errors="errors" :field="currentField"
     :show-help-text="showHelpText">
     <template #field>
       <div class="nova-file-manager">
@@ -163,8 +163,7 @@ export default defineComponent({
             }" class="gap-4 mb-2 w-full" ghost-class="opacity-0" item-key="id" @end="drag = false"
               @start="drag = true" tag="ul" v-bind="dragOptions">
               <template #item="{ element }">
-                <FieldCard :field="field" :fullWidthContent="fullWidthContent" :file="element" class="cursor-grab"
-                  :on-deselect="deselectFile" />
+                <FieldCard :field="field" :file="element" class="cursor-grab" :on-deselect="deselectFile" />
               </template>
             </draggable>
           </div>
