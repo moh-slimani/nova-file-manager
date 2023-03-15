@@ -26,12 +26,13 @@ const toggleSelection = (file: Entity) => store.toggleSelection({ file })
 
 <template>
   <div
-    class="columns-2 gap-x-4 gap-y-4 sm:columns-3 sm:gap-x-6 md:columns-4 xl:columns-6 xl:gap-x-4"
+    class="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 md:grid-cols-4 xl:grid-cols-6 xl:gap-x-4"
     role="group"
     data-tour="nfm-file-grid"
   >
     <template v-for="file in files" :key="file.id">
       <File
+        class="aspect-square"
         :selected="isSelected(file) ?? false"
         :file="file"
         @click="toggleSelection(file)"
